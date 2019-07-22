@@ -20,4 +20,3 @@ class BankAccount {
 }
 
 let personW = new BankAccount('Warona', 'Savings', 452657852155, 158267, 555, 12);
-console.log(personW.accountInformation());
