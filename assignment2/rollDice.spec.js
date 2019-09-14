@@ -3,11 +3,11 @@ describe('DiceFactory', () => {
     beforeEach(() => {
         dice = new DiceFactory(6, 20);
     })
-    it('should output a random number for a six sided die', () => {
-        expect(dice.makeDie()).toBeLessThanOrEqual(6)
+    it('should output a random instance of a six sided die', () => {
+        expect(dice.makeDie()).toEqual(jasmine.any(Array))
     })
-    it('should output a random number for a 20 sided die', () => {
-        expect(dice.makeDie()).toBeLessThanOrEqual(20)
+    it('should output a random instance of a 20 sided die', () => {
+        expect(dice.makeDie()).toEqual(jasmine.any(Array))
     })
 });
 

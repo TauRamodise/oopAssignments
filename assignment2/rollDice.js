@@ -10,12 +10,16 @@ class DiceFactory {
     }
 
     makeDie() {
-        // output a single dice instance 
-        let diceRoll = Math.floor(Math.random() * this.diceSides) + 1;
+        // output a single dice instance
+        let diceRoll = [];
+        for(let i = 0; i < this.diceSides; i++){
+            diceRoll.push( Math.floor(Math.random() * this.diceSides) + 1)     
+           }
 
         return diceRoll;
     }
 }
+
 
 //Test if the die produced is fair or not 
 class DiceTester {
