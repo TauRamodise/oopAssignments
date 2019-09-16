@@ -1,22 +1,31 @@
 class BankAccount {
-    constructor(accOwner, type, accNumber, balance, fee, interest) {
+    constructor(accOwner, type, accNumber, accBalance) {
         this.accOwner = accOwner;
         this.type = type;
         this.accNumber = accNumber;
-        this.fee = fee;
-        this.balance = balance;
+        this.accBalance = accBalance
+
+    }
+    account(deposit, withdrawal, bankFee, balance, interest) {
         this.interest = interest;
+        this.bankFee = bankFee;
+        this.deposit = deposit;
+        this.withdrawal = withdrawal;
+        this.balance = balance
+
+        this.accBalance = this.interest * this.balance + this.deposit - this.withdrawal - this.bankFee;
+        return this.accBalance;
+
 
     }
 
     accountInformation() {
-        return `Account owner ${this.accOwner} has the account type ${this.type},
+        let netBalance = this.accBalance
+
+        return `
+        Account owner ${this.accOwner} has the account type ${this.type},
         with the account number: ${this.accNumber},
-        the account racked up a total of R${this.fee} in banking fees,
-        currently has a balance of R${this.balance}, 
         this account has an interest rate of ${this.interest} percent
-     `
+        currently has a balance of R` + netBalance
     }
 }
-
-let personW = new BankAccount('Warona', 'Savings', 452657852155, 158267, 555, 12);
